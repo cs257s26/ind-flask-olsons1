@@ -23,7 +23,6 @@ def load_csv(csvName: str) -> list[str]:
 
     return localData
 
-
 def get_specified_column(column_heading: str, data: list) -> list[str]:
     """
     Returns a specific column in the csv sheet (represented as a python list called "data"), provided a column heading 

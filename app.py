@@ -4,7 +4,7 @@ from ProductionCode.command_line import find_sightings_all_locations, find_most_
 
 app = Flask(__name__)
 
-@app.route('/sightingslocationall/<int:year>/<bird>/')
+@app.route('/sightingslocationsall/<int:year>/<bird>/')
 def sightings_route(year: int, bird: str) -> str:
     """
     Usage guide: check readme.md
@@ -12,7 +12,7 @@ def sightings_route(year: int, bird: str) -> str:
     result = find_sightings_all_locations(bird, year)
     
     if result is None:
-        return "The file was not found..."
+        return "The file was not found"
 
     return f"{bird} was sighted {result} times" 
 
@@ -37,8 +37,8 @@ def page_not_found(error):
     return '''
     Error Code 404 Not Found: Silly goose (Haha, get it? It's a bird website)! That page doesn\'t exist...<br>
     <br>
-    To get a the number of a specific bird's sightings at all stops, do: /sightingslocationall/BIRD_NAME/<br>
-    Example usage: /sightingslocationall/American Goldfinch (Carduelis tristis) /<br>
+    To get a the number of a specific bird's sightings at all stops, do: /sightingslocationsall/BIRD_NAME/<br>
+    Example usage: /sightingslocationsall/American Goldfinch (Carduelis tristis) /<br>
     <br>
     To get the most popular stop of a given year, do: /mostpopularstop/YEAR/<br>
     Example usage: /mostpopularstop/2018/<br>

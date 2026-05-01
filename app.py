@@ -1,5 +1,5 @@
 from flask import Flask
-from ProductionCode.command_line import find_sightings_all_locations, find_most_popular_stop, load_csv
+from ProductionCode.command_line import find_sightings_all_locations, find_most_popular_stop
 
 app = Flask(__name__)
 

@@ -1,5 +1,4 @@
 from flask import Flask
-import sys
 from ProductionCode.command_line import find_sightings_all_locations, find_most_popular_stop, load_csv
 
 app = Flask(__name__)
@@ -53,10 +52,4 @@ def code_error(error):
     return 'Error Code 500 Internal Server Error: Fatal error with our code, sorry bro'
 
 if __name__ == '__main__':
-    #my port is not hardcoded. It can be chosen as the first command line argument (python3 app.py <port>)
-
-    app_port = int(sys.argv[1])
-    if len(sys.argv) > 1:
-        app_port = 5100
-
-    app.run(port = app_port)
+    app.run()
